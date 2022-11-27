@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Laptop",
+    "categoryId": "17a31fa4-47b1-48e0-90e4-078dff31ad6c",
+    "uuid": "2822a001-89eb-4c40-bfd9-df653e133c6b",
+    "imgUrls": [
+      "imgUrl1",
+      "imgUrl2"
+    ]
+  },
+  {
+    "name": "Potato",
+    "categoryId": "c0935a78-8342-40ca-b8f6-5d974dc0474e",
+    "uuid": "10c36fdc-ff1f-42da-9d6a-f6bc4f4c18cf",
+    "imgUrls": [
+      "imgUrl1",
+      "imgUrl2"
+    ]
+  },
+  {
+    "name": "Porche",
+    "categoryId": "0644d9f3-8a77-4764-870c-7df9127022f7",
+    "uuid": "3227bd7c-5981-46fd-992e-9ae766e392db",
+    "imgUrls": [
+      "imgUrl1",
+      "imgUrl2"
+    ]
+  },
+  {
+    "name": "Office",
+    "categoryId": "7c9b7032-9aaa-4707-ac54-70c64024841c",
+    "uuid": "77cacfbf-ca6b-4d7a-8435-c8daae5167f5",
+    "imgUrls": [
+      "imgUrl1",
+      "imgUrl2"
+    ]
+  }
+]
