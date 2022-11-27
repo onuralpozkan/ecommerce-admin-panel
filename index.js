@@ -16,6 +16,7 @@ const Category = require('./models/category')
 const Product = require('./models/product')
 const productDatabase = require('./database/productDb');
 const categoryDb = require('./database/categoryDb');
+const { save, load } = require('./database/categoryDb');
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +30,19 @@ app.get('/create-product', (req, res) => {
 });
 app.get('/create-category', (req, res) => {
   res.render('category');
+});
+app.post('/create-category', (req, res) => {
+  const categoryName = req.body['category-name']
+  const newCategory = new Category(categoryName);
+  categoryDb.save(newCategory);
+
+  const error = categoryDb.save(newCategory)?.message;
+  const list = categoryDb.load()
+  console.log('errorrr',error);
+  res.render('category-list', {
+    list,
+    error: error || ''
+  });
 });
 app.post('/create-product', (req, res) => {
   const reqbody = req.body;

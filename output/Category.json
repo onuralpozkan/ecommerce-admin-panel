@@ -1,1 +1,18 @@
-{"name":"Elektronik","uuid":"091623d7-d5b6-4f8c-9c90-a8e5b01d7d11"}
+[
+  {
+    "name": "Araba",
+    "uuid": "33258734-c445-496a-be67-adb6d7bd513a"
+  },
+  {
+    "name": "Deneme",
+    "uuid": "d4ff3854-e57d-4c13-b656-fd44a9188623"
+  },
+  {
+    "name": "Elektronik",
+    "uuid": "8c906283-7a8a-427a-b96c-592414bfc597"
+  },
+  {
+    "name": "SXSA",
+    "uuid": "32ba3182-6f7c-48dd-af43-216c2e9a2e14"
+  }
+]

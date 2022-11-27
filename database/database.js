@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 class BaseDatabase {
   constructor(model) {
@@ -7,19 +7,31 @@ class BaseDatabase {
   }
 
   save(object) {
-    const productUuid = object.uuid;
-    const hasProduct = this.findBy(productUuid);
-    const products = this.load();
-    products.push(object);
+    const objectsArray = this.load();
+    console.log({ objectsArray });
+    const hasSameName = objectsArray.find(
+      (o) => o.name.toLowerCase() === object.name.toLowerCase()
+    );
+
+    if (hasSameName) {
+      return new Error(
+        "Same " + this.fileName + " name was created before, please select different name!!!",
+        {message: 'HATA VAR'}
+      );
+    }
+
+    objectsArray.push(object);
+
+    console.log({ after: objectsArray });
+
     fs.writeFileSync(
       `./output/${this.fileName}.json`,
-      JSON.stringify(products, null, 2)
+      JSON.stringify(objectsArray, null, 2)
     );
   }
   load() {
     const products = fs.readFileSync(`./output/${this.fileName}.json`);
-    if (products === undefined)
-      throw new Error('There is not any json file name' + this.fileName);
+    if (products === undefined) throw new Error("There is not any json file name" + this.fileName);
     return JSON.parse(products);
   }
   findBy(uuid) {
@@ -32,7 +44,7 @@ class BaseDatabase {
       }
       return product;
     }
-    throw new Error('There is not any product');
+    throw new Error("There is not any product");
   }
 }
 
