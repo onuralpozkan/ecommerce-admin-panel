@@ -12,5 +12,13 @@ html(lang="en")
         label(for="product-name")
         input(type="text" name="product-name" id="product-name" placeholder="Enter a product name")
         label(for="category-name")
-        input(type="text" name="category-name" id="category-name" placeholder="Enter a category name")
+        select(name="category-uuid") 
+          if list
+            each item in list 
+              option(value= item.uuid)= item.name
         button(type="submit") Submit
+    h1= result
+    if products
+      ul 
+        each item in products 
+          li= item.name

@@ -12,3 +12,9 @@ html(lang="en")
         label(for="category-name")
         input(type="text" name="category-name" id="category-name" placeholder="Enter a category name")
         button(type="submit") Submit
+    h1 Cateogry List
+    h1= result
+    if list
+      ul 
+        each item in list 
+          li= item.name

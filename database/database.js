@@ -13,21 +13,17 @@ class BaseDatabase {
       (o) => o.name.toLowerCase() === object.name.toLowerCase()
     );
 
-    if (hasSameName) {
-      return new Error(
-        "Same " + this.fileName + " name was created before, please select different name!!!",
-        {message: 'HATA VAR'}
+    if (!hasSameName) {
+      objectsArray.push(object);
+      fs.writeFileSync(
+        `./output/${this.fileName}.json`,
+        JSON.stringify(objectsArray, null, 2)
       );
+      return 'Save operation successfully done';
     }
 
-    objectsArray.push(object);
+    return new Error(`There is a ${this.fileName.toLowerCase()} name called ${object.name.toLowerCase()} created before. Please select different name!!!`)
 
-    console.log({ after: objectsArray });
-
-    fs.writeFileSync(
-      `./output/${this.fileName}.json`,
-      JSON.stringify(objectsArray, null, 2)
-    );
   }
   load() {
     const products = fs.readFileSync(`./output/${this.fileName}.json`);

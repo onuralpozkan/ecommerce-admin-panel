@@ -14,5 +14,21 @@
   {
     "name": "SXSA",
     "uuid": "32ba3182-6f7c-48dd-af43-216c2e9a2e14"
+  },
+  {
+    "name": "Eşya",
+    "uuid": "230672af-0614-40e7-8719-2d21bb84c53b"
+  },
+  {
+    "name": "Yeni",
+    "uuid": "c7b6e77b-bb1f-4c02-8345-3baba62b3482"
+  },
+  {
+    "name": "Adana",
+    "uuid": "b3e7c843-acc3-48e8-a36d-fe60bd651ce8"
+  },
+  {
+    "name": "Gel Babbaa",
+    "uuid": "082c4f09-eee4-4c29-9290-fa33e4917a69"
   }
 ]

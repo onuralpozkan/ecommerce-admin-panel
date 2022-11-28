@@ -34,5 +34,14 @@
       "imgUrl1",
       "imgUrl2"
     ]
+  },
+  {
+    "name": "Ferrari",
+    "categoryId": "33258734-c445-496a-be67-adb6d7bd513a",
+    "uuid": "9b8c4f53-53cf-42c7-a0d2-413e35112ea3",
+    "imgUrls": [
+      "imgUrl1",
+      "imgUrl2"
+    ]
   }
 ]

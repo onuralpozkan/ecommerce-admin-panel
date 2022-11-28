@@ -24,35 +24,47 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   res.render('index');
 });
-
-app.get('/create-product', (req, res) => {
-  res.render('product');
-});
 app.get('/create-category', (req, res) => {
-  res.render('category');
+  const list = categoryDb.load()
+  res.render('category', {
+    list
+  });
 });
 app.post('/create-category', (req, res) => {
   const categoryName = req.body['category-name']
   const newCategory = new Category(categoryName);
-  categoryDb.save(newCategory);
 
-  const error = categoryDb.save(newCategory)?.message;
+  const result = categoryDb.save(newCategory);
   const list = categoryDb.load()
-  console.log('errorrr',error);
-  res.render('category-list', {
+  console.log('listtt',list);
+  res.render('category', {
     list,
-    error: error || ''
+    result
   });
 });
+
+app.get('/create-product', (req, res) => {
+  const list = categoryDb.load()
+  if(!list) res.redirect('/')
+  const products = productDatabase.load();
+  res.render('product', {
+    list,
+    products
+  });
+});
+
 app.post('/create-product', (req, res) => {
   const reqbody = req.body;
   console.log(reqbody);
   const productName = reqbody['product-name']
-  const categoryName = reqbody['category-name']
-  const category1 = new Category(categoryName);
-  const product1 = new Product(productName, category1.uuid, ['imgUrl1', 'imgUrl2'])
-  productDatabase.save(product1)
-  res.render('product-list')
+  const categoryUuid = reqbody['category-uuid']
+  const newProduct = new Product(productName, categoryUuid, ['imgUrl1', 'imgUrl2'])
+  const result = productDatabase.save(newProduct)
+  const products = productDatabase.load();
+  res.render('product', {
+    products,
+    result
+  })
 })
 
 app.listen(PORT, () => {
