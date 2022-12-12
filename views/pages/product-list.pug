@@ -1,0 +1,10 @@
+extends ../layout
+block content
+  h1= result
+  h1 Product List
+  if products
+    ul 
+      each item in products 
+        li= item.name
+
+  a(href="create-product") Create New Product 

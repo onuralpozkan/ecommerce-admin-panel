@@ -1,0 +1,11 @@
+extends ../layout
+block content
+	h1 Cateogry List
+	if(result !== '')
+		h1= result
+	if list.length
+		ul
+			each val in list
+				li= val.name
+	a(href="create-category") Create New Category
+

@@ -43,5 +43,14 @@
       "imgUrl1",
       "imgUrl2"
     ]
+  },
+  {
+    "name": "Şehir",
+    "categoryId": "b3e7c843-acc3-48e8-a36d-fe60bd651ce8",
+    "uuid": "c7ca5a15-4b38-46fe-b2f5-aa1b8a0971df",
+    "imgUrls": [
+      "imgUrl1",
+      "imgUrl2"
+    ]
   }
 ]

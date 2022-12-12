@@ -1,0 +1,13 @@
+extends ../layout
+block content
+  h1 Create Product
+  div 
+    form(action="product-list" method="post") 
+      label(for="product-name")
+      input(type="text" name="product-name" id="product-name" placeholder="Enter a product name")
+      label(for="category-name")
+      select(name="category-uuid") 
+        if list
+          each item in list 
+            option(value= item.uuid)= item.name
+      button(type="submit") Submit

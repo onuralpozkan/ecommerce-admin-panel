@@ -1,16 +1,10 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Admin Panel
-  body 
-    h1 Admin Panel For E-Commerce App
-    p It is created with nodejs
-    nav 
-      ul 
-        li
-          a(href='/create-category') Category Creation Page
-        li
-          a(href='/create-product') Product Creation Page
+extends layout.pug
+block content
+  h1 Admin Panel For E-Commerce App
+  p It is created with nodejs
+  nav 
+    ul 
+      li
+        a(href='/create-category') Category Creation Page
+      li
+        a(href='/create-product') Product Creation Page

@@ -30,5 +30,41 @@
   {
     "name": "Gel Babbaa",
     "uuid": "082c4f09-eee4-4c29-9290-fa33e4917a69"
+  },
+  {
+    "name": "Vegetables",
+    "uuid": "3131b62f-99e8-45e2-af3b-3f02dc48df89"
+  },
+  {
+    "name": "Car",
+    "uuid": "ea66a4d6-7b0d-48dc-8735-cb410480d21f"
+  },
+  {
+    "name": "Yutube",
+    "uuid": "581401df-4741-42b7-a107-b9567f80227b"
+  },
+  {
+    "name": "İnşaat",
+    "uuid": "4ea5f099-4962-46c4-94a8-fd724d731545"
+  },
+  {
+    "name": "Software",
+    "uuid": "cd08cd73-c4b9-4228-87f7-46aa8801e36c"
+  },
+  {
+    "name": "Sofw",
+    "uuid": "9dfeabd5-3d50-46a7-a12d-8707a2ae58f6"
+  },
+  {
+    "name": "Space",
+    "uuid": "372d2c5d-d20a-4cfa-aba9-accf87857dae"
+  },
+  {
+    "name": "Oyun",
+    "uuid": "f2b60a3c-d8fc-49de-b377-44530e84b0e7"
+  },
+  {
+    "name": "Korag",
+    "uuid": "d7ef785e-1382-43d7-8a25-7c20fd0035b2"
   }
 ]

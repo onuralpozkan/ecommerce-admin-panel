@@ -1,0 +1,17 @@
+extends ../layout
+block content
+  h1 Create Category
+  div 
+    form(action="category-list" method="post") 
+      label(for="category-name")
+      input(type="text" name="category-name" id="category-name" placeholder="Enter a category name")
+      button(type="submit") Submit
+  script. 
+    document.onreadystatechange = (ev) => {
+      if (document.readyState === 'complete') {
+        const categoryNameInput = ev.target.getElementById('category-name');
+        categoryNameInput.value = '';
+        categoryNameInput.focus();
+        // document ready
+      }
+    };

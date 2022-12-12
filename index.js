@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+app.use(express.static(path.join(__dirname, "public")));
+
 const Category = require('./models/category')
 const Product = require('./models/product')
 const productDatabase = require('./database/productDb');
@@ -25,19 +27,15 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 app.get('/create-category', (req, res) => {
-  const list = categoryDb.load()
-  res.render('category', {
-    list
-  });
+  res.render('pages/category');
 });
-app.post('/create-category', (req, res) => {
+app.post('/category-list', (req, res) => {
   const categoryName = req.body['category-name']
   const newCategory = new Category(categoryName);
 
   const result = categoryDb.save(newCategory);
   const list = categoryDb.load()
-  console.log('listtt',list);
-  res.render('category', {
+  res.render('pages/category-list', {
     list,
     result
   });
@@ -46,14 +44,12 @@ app.post('/create-category', (req, res) => {
 app.get('/create-product', (req, res) => {
   const list = categoryDb.load()
   if(!list) res.redirect('/')
-  const products = productDatabase.load();
-  res.render('product', {
-    list,
-    products
+  res.render('pages/product', {
+    list
   });
 });
 
-app.post('/create-product', (req, res) => {
+app.post('/product-list', (req, res) => {
   const reqbody = req.body;
   console.log(reqbody);
   const productName = reqbody['product-name']
@@ -61,7 +57,7 @@ app.post('/create-product', (req, res) => {
   const newProduct = new Product(productName, categoryUuid, ['imgUrl1', 'imgUrl2'])
   const result = productDatabase.save(newProduct)
   const products = productDatabase.load();
-  res.render('product', {
+  res.render('pages/product-list', {
     products,
     result
   })
